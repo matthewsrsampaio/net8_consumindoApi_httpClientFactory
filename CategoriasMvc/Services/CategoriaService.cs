@@ -9,7 +9,7 @@ namespace CategoriasMvc.Services
     
     public class CategoriaService : ICategoriaService
     {
-        private const string apiEndpoint = "api/1/categorias";
+        private const string apiEndpoint = "api/1/categorias/";
         
         private readonly JsonSerializerOptions _options;
         private readonly IHttpClientFactory _clientFactory;
@@ -91,7 +91,7 @@ namespace CategoriasMvc.Services
                 if (response.IsSuccessStatusCode)
                 {
                     var apiResponse = await response.Content.ReadAsStreamAsync();
-                    var categoriaVM = await JsonSerializer
+                    categoriaVM = await JsonSerializer
                         .DeserializeAsync<CategoriaViewModel>
                         (apiResponse, _options);
                 }

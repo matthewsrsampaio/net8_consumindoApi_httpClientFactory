@@ -18,8 +18,16 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\DEV\Projetos C#\CategoriasMvc\CategoriasMvc
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Categorias/AtualizarCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xBdHVhbGl6YXJDYXRlZ29yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Categorias/CriarNovaCategoria.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmlhck5vdmFDYXRlZ29yaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Categorias/DeletarCategoria.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZWxldGFyQ2F0ZWdvcmlhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Categorias/Index.cshtml]
@@ -32,10 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Shared/teste.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXHRlc3RlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/DEV/Projetos C\#/CategoriasMvc/CategoriasMvc/Views/Shared/_ValidationScriptsPartial.cshtml]

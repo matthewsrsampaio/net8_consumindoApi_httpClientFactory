@@ -1,4 +1,5 @@
 using CategoriasMvc.Services;
+using System.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,7 +12,16 @@ builder.Services.AddHttpClient("CategoriasApi", c =>
     c.BaseAddress = new Uri(builder.Configuration["ServiceUri:CategoriasApi"]);
 });
 
+//Configura ClientHttp para fazer requisições a API. Poderá ser injetada em toda a aplicação
+builder.Services.AddHttpClient("AutenticaApi", c =>
+{
+    c.BaseAddress = new Uri(builder.Configuration["ServiceUri:AutenticaApi"]);
+    c.DefaultRequestHeaders.Accept.Clear(); //Limpa o cabeçalho 
+    c.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json")); //Difere esse ClientHttp do outro (CategoriasApi), criado acima.
+});
+
 builder.Services.AddScoped<ICategoriaService, CategoriaService>();
+builder.Services.AddScoped<IAutenticacao, Autenticacao>();
 
 var app = builder.Build();
 

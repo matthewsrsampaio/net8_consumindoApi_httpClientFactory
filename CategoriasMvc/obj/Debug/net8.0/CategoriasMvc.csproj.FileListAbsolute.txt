@@ -28,3 +28,4 @@ D:\DEV\Projetos C#\CategoriasMvc\CategoriasMvc\obj\Debug\net8.0\refint\Categoria
 D:\DEV\Projetos C#\CategoriasMvc\CategoriasMvc\obj\Debug\net8.0\CategoriasMvc.pdb
 D:\DEV\Projetos C#\CategoriasMvc\CategoriasMvc\obj\Debug\net8.0\CategoriasMvc.genruntimeconfig.cache
 D:\DEV\Projetos C#\CategoriasMvc\CategoriasMvc\obj\Debug\net8.0\ref\CategoriasMvc.dll
+D:\DEV\Projetos C#\CategoriasMvc\CategoriasMvc\obj\Debug\net8.0\CategoriasMvc.sourcelink.json

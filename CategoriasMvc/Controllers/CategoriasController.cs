@@ -69,5 +69,27 @@ namespace CategoriasMvc.Controllers
             ViewBag.Erro = "Erro ao atualizar Categoria";
             return View(categoriaVM);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> DeletarCategoria(int id)
+        {
+            var result = await _categoriaService.GetCategoriaPorId(id);
+
+            if(result is null)
+                return View("Error");
+
+            return View(result);
+        }
+
+        [HttpPost(), ActionName("DeletarCategoria")]
+        public async Task<IActionResult> DeletaConfirmado(int id)
+        {
+            var result = await _categoriaService.DeletaCategoria(id);
+
+            if (result)
+                return RedirectToAction("Index");
+
+            return View("Error");
+        }
     }
 }
