@@ -11,7 +11,7 @@ namespace CategoriasMvc.Services
         private readonly JsonSerializerOptions _options;
         private TokenViewModel tokenUsuario;
 
-        public Autenticacao(IHttpClientFactory clientFactory, JsonSerializerOptions options)
+        public Autenticacao(IHttpClientFactory clientFactory)
         {
             _clientFactory = clientFactory;
             _options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true};

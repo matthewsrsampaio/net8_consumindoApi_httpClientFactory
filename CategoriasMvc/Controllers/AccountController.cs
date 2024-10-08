@@ -29,6 +29,7 @@ namespace CategoriasMvc.Controllers
                 return View(model);
             }
 
+            //Verifica as credenciais do usuário e retorna um valor
             var result = await _autenticacaoService.AutenticaUsuario(model);
 
             if(result is null)
@@ -38,7 +39,7 @@ namespace CategoriasMvc.Controllers
             }
 
             //armazenar o token no cookie
-            Response.Cookies.Append("X-Action_Token", result.Token, new CookieOptions()
+            Response.Cookies.Append("X-Access-Token", result.Token, new CookieOptions()
             {
                 Secure = true,
                 HttpOnly = true,
