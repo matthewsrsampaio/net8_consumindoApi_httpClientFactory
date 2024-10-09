@@ -50,7 +50,7 @@
                         @Html.DisplayFor(modelItem => item.ImagemUrl)
                     </td>
                     <td>
-                        <a asp-action="AtualizarProduto" asp_route-id="@item.ProdutoId" title="Editar" class="btn btn-warning">
+                        <a asp-action="AtualizarProduto" asp-route-id="@item.ProdutoId" title="Editar" class="btn btn-warning">
                             <span class="fas fa-edit"></span>
                         </a>
                         <a asp-action="DeletarProduto" asp-route-id="@item.ProdutoId" title="Deletar" class="btn btn-danger">
