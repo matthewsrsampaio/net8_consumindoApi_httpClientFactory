@@ -1,6 +1,7 @@
 ﻿using CategoriasMvc.Models;
 using CategoriasMvc.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using NuGet.Common;
 
 namespace CategoriasMvc.Controllers
@@ -25,6 +26,56 @@ namespace CategoriasMvc.Controllers
 
             if(result is null)
                 return View("Error");
+
+            return View(result);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> CriarNovoProduto()
+        {
+            ViewBag.CategoriaId = new SelectList(await _categoriaService.GetCategorias(), "CategoriaId", "Nome");
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<ProdutoViewModel>> CriarNovoProduto(ProdutoViewModel produtoVM)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _produtoService.CriaProduto(produtoVM, ObtemTokenJwt());
+
+                if (result != null)
+                    return RedirectToAction(nameof(Index));
+
+            }
+            else
+            {
+                ViewBag.CategoriaId = new SelectList(await _categoriaService.GetCategorias(), "CategoriaId", "Nome");
+            }
+            return View(produtoVM);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DetalhesProduto(int id)
+        {
+            var produto = await _produtoService.GetProdutoPorId(id, ObtemTokenJwt());
+
+            if(produto is null)
+                return View("Error");
+
+            return View(produto);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AtualizarProduto(int id)
+        {
+            var result = await _produtoService.GetProdutoPorId(id, ObtemTokenJwt());
+
+            if (result is null)
+                return View("Error");
+
+            ViewBag.CategoriaId = new SelectList(await _categoriaService.GetCategorias(), "CategoriaId", "Nome");
 
             return View(result);
         }

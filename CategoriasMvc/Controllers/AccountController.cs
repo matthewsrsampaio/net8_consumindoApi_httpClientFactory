@@ -41,6 +41,7 @@ namespace CategoriasMvc.Controllers
             //armazenar o token no cookie
             Response.Cookies.Append("X-Access-Token", result.Token, new CookieOptions()
             {
+                Expires = DateTimeOffset.UtcNow.AddMinutes(1),
                 Secure = true,
                 HttpOnly = true,
                 SameSite = SameSiteMode.Strict,
