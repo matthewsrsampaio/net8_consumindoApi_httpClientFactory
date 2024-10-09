@@ -80,6 +80,19 @@ namespace CategoriasMvc.Controllers
             return View(result);
         }
 
+        [HttpPost]
+        public async Task<ActionResult<ProdutoViewModel>> AtualizarProduto(int id, ProdutoViewModel produtoVM)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _produtoService.AtualizaProduto(id, produtoVM, ObtemTokenJwt());
+
+                if (result)
+                    return RedirectToAction(nameof(Index));
+            }
+            return View(produtoVM);
+        }
+
         private string ObtemTokenJwt()
         {
             if (HttpContext.Request.Cookies.ContainsKey("X-Access-Token"))
