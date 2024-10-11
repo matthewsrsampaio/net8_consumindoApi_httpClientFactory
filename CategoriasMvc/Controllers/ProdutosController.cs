@@ -93,6 +93,28 @@ namespace CategoriasMvc.Controllers
             return View(produtoVM);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> DeletarProduto(int id)
+        {
+            var result = await _produtoService.GetProdutoPorId(id, ObtemTokenJwt());
+
+            if (result is null)
+                return View("Error");
+
+            return View(result);
+        }
+
+        [HttpPost(), ActionName("DeletarProduto")]
+        public async Task<IActionResult> DeletaConfirmado(int id)
+        {
+            var result = await _produtoService.DeletaProduto(id, ObtemTokenJwt());
+
+            if (result)
+                return RedirectToAction("Index");
+
+            return View("Error");
+        }
+
         private string ObtemTokenJwt()
         {
             if (HttpContext.Request.Cookies.ContainsKey("X-Access-Token"))
